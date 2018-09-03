@@ -1,5 +1,5 @@
-About pyqt
-==========
+About pyqtwebkit
+===================
 
 Home: http://www.riverbankcomputing.co.uk/software/pyqt
 
@@ -15,38 +15,40 @@ Windows, MacOS/X and Linux. PyQt5 supports Qt v5. PyQt4 supports Qt v4 and
 will build against Qt v5. The bindings are implemented as a set of Python
 modules and contain over 1,000 classes."
 
+This recipe builds just the bindings for QtWebKit.
+
 
 Current build status
 ====================
 
-Linux: [![Circle CI](https://circleci.com/gh/conda-forge/pyqt-feedstock.svg?style=shield)](https://circleci.com/gh/conda-forge/pyqt-feedstock)
-OSX: [![TravisCI](https://travis-ci.org/conda-forge/pyqt-feedstock.svg?branch=master)](https://travis-ci.org/conda-forge/pyqt-feedstock)
-Windows: [![AppVeyor](https://ci.appveyor.com/api/projects/status/github/conda-forge/pyqt-feedstock?svg=True)](https://ci.appveyor.com/project/conda-forge/pyqt-feedstock/branch/master)
+Linux: [![Circle CI](https://circleci.com/gh/conda-forge/pyqtwebkit-feedstock.svg?style=shield)](https://circleci.com/gh/conda-forge/pyqtwebkit-feedstock)
+OSX: [![TravisCI](https://travis-ci.org/conda-forge/pyqtwebkit-feedstock.svg?branch=master)](https://travis-ci.org/conda-forge/pyqtwebkit-feedstock)
+Windows: [![AppVeyor](https://ci.appveyor.com/api/projects/status/github/conda-forge/pyqtwebkit-feedstock?svg=True)](https://ci.appveyor.com/project/conda-forge/pyqtwebkit-feedstock/branch/master)
 
 Current release info
 ====================
-Version: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/pyqt/badges/version.svg)](https://anaconda.org/conda-forge/pyqt)
-Downloads: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/pyqt/badges/downloads.svg)](https://anaconda.org/conda-forge/pyqt)
+Version: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/pyqtwebkit/badges/version.svg)](https://anaconda.org/conda-forge/pyqtwebkit)
+Downloads: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/pyqtwebkit/badges/downloads.svg)](https://anaconda.org/conda-forge/pyqtwebkit)
 
-Installing pyqt
+Installing pyqtwebkit
 ===============
 
-Installing `pyqt` from the `conda-forge` channel can be achieved by adding `conda-forge` to your channels with:
+Installing `pyqtwebkit` from the `conda-forge` channel can be achieved by adding `conda-forge` to your channels with:
 
 ```
 conda config --add channels conda-forge
 ```
 
-Once the `conda-forge` channel has been enabled, `pyqt` can be installed with:
+Once the `conda-forge` channel has been enabled, `pyqtwebkit` can be installed with:
 
 ```
-conda install pyqt
+conda install pyqtwebkit
 ```
 
-It is possible to list all of the versions of `pyqt` available on your platform with:
+It is possible to list all of the versions of `pyqtwebkit` available on your platform with:
 
 ```
-conda search pyqt --channel conda-forge
+conda search pyqtwebkit --channel conda-forge
 ```
 
 
@@ -85,17 +87,17 @@ Terminology
                   produce the finished article (built conda distributions)
 
 
-Updating pyqt-feedstock
-=======================
+Updating pyqtwebkit-feedstock
+================================
 
-If you would like to improve the pyqt recipe or build a new
+If you would like to improve the pyqtwebkit recipe or build a new
 package version, please fork this repository and submit a PR. Upon submission,
 your changes will be run on the appropriate platforms to give the reviewer an
 opportunity to confirm that the changes result in a successful build. Once
 merged, the recipe will be re-built and uploaded automatically to the
 `conda-forge` channel, whereupon the built conda packages will be available for
 everybody to install and use from the `conda-forge` channel.
-Note that all branches in the conda-forge/pyqt-feedstock are
+Note that all branches in the conda-forge/pyqtwebkit-feedstock are
 immediately built and any created packages are uploaded, so PRs should be based
 on branches in forks and branches in the main repository should only be used to
 build distinct package versions.
