@@ -2,18 +2,23 @@
 
 import sys
 from PyQt5 import QtWidgets
-from PyQt5.QtCore import QTimer
+from PyQt5.QtCore import QTimer, QUrl
+from PyQt5.QtWebKit import QWebSettings
+from PyQt5.QtWebKitWidgets import QWebView
 
 
 def main():
 
     app = QtWidgets.QApplication(sys.argv)
 
-    w = QtWidgets.QWidget()
-    w.resize(250, 150)
-    w.move(300, 300)
-    w.setWindowTitle('Simple Test')
-    w.show()
+    web = QWebView()
+    settings = web.settings()
+    settings.setAttribute(QWebSettings.JavaEnabled, True)
+    web.load(QUrl("https://www.google.com"))
+    web.show()
+    web.setWindowTitle("Google Images Redirect")
+    web.page().mainFrame().evaluateJavaScript(
+        'window.location.href="https://images.google.com/"')
 
     def quit_app():
         app.quit()

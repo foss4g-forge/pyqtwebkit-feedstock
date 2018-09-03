@@ -1,7 +1,7 @@
 {% set version = "5.9.2" %}
 
 package:
-  name: pyqt
+  name: pyqtwebkit
   version: {{ version }}
 
 source:
@@ -12,7 +12,7 @@ build:
   number: 1
   skip: true  # [win and py27]
   run_exports:
-    {{ pin_subpackage('pyqt', max_pin='x.x') }}
+    {{ pin_subpackage('pyqtwebkit', max_pin='x.x') }}
 
 requirements:
   build:
@@ -51,12 +51,13 @@ requirements:
   host:
     - python
     - sip >=4.19.4
-    - dbus  # [not win]
-    - qt 5.9.*
+    - qtwebkit 5.9.*
+    - pyqt 5.9.*
   run:
     - python
     - sip >=4.19.4
-    - qt 5.9.*
+    - qtwebkit 5.9.*
+    - pyqt 5.9.*
 
 test:
   files:
@@ -64,7 +65,8 @@ test:
   imports:
     - PyQt5.QtCore
     - PyQt5.QtGui
-    - PyQt5.QtWebEngineWidgets
+    - PyQt5.QtWebKit
+    - PyQt5.QtWebKitWidgets
   commands:
     - DISPLAY=localhost:1.0 xvfb-run -a bash -c 'python pyqt_test.py'  # [linux]
 
@@ -73,7 +75,7 @@ about:
   license: Commercial, GPL-2.0, GPL-3.0
   license_family: GPL
   license_file: LICENSE
-  summary: 'Python binding of the cross-platform GUI toolkit Qt.'
+  summary: 'Python binding of the cross-platform GUI toolkit Qt. QtWebKit only.'
   description: |
     "PyQt is a set of Python v2 and v3 bindings for The Qt Company's Qt
     application framework and runs on all platforms supported by Qt including
@@ -90,3 +92,4 @@ extra:
     - gillins
     - msarahan
     - ocefpaf
+    - dakcarto

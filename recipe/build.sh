@@ -23,51 +23,29 @@ pushd bin
 popd
 export PATH=${PWD}/bin:${PATH}
 
-## Future:
-#        --enable Qt3DAnimation \
-#        --enable Qt3DCore \
-#        --enable Qt3DExtras \
-#        --enable Qt3DInput \
-#        --enable Qt3DLogic \
-#        --enable Qt3DRender \
-
 ## START BUILD
 $PYTHON configure.py \
         --verbose \
         --confirm-license \
         --assume-shared \
-        --enable QtWidgets \
-        --enable QtGui \
-        --enable QtCore \
-        --enable QtHelp \
-        --enable QtMultimediaWidgets \
-        --enable QtNetwork \
-        --enable QtXml \
-        --enable QtXmlPatterns \
-        --enable QtDBus \
-        --enable QtX11Extras \
-        --enable QtWebSockets \
-        --enable QtWebChannel \
-        --enable QtWebEngineWidgets \
-        --enable QtNfc \
-        --enable QtWebEngineCore \
-        --enable QtWebEngine \
-        --enable QtOpenGL \
-        --enable QtQml \
-        --enable QtQuick \
-        --enable QtQuickWidgets \
-        --enable QtSql \
-        --enable QtSvg \
-        --enable QtDesigner \
-        --enable QtPrintSupport \
-        --enable QtSensors \
-        --enable QtTest \
-        --enable QtBluetooth \
-        --enable QtLocation \
-        --enable QtPositioning \
-        --enable QtSerialPort \
+        --enable=QtWebKit \
+        --enable=QtWebKitWidgets \
+        --no-designer-plugin \
+        --no-python-dbus \
+        --no-qml-plugin \
+        --no-qsci-api \
+        --no-sip-files \
+        --no-tools \
         "${_extra_modules[@]}" \
         -q ${PREFIX}/bin/qmake
 make -j${CPU_COUNT} ${VERBOSE_AT}
 make check
 make install
+
+# clean out non-WebKit artifacts (already installed by pyqt)
+# rm -R ${PREFIX}/"share"
+# cd "#{lib}/python#{version}/site-packages/PyQt5" do
+#   rm "__init__.py"
+#   rm "Qt.so"
+#   rm_r "uic"
+# end

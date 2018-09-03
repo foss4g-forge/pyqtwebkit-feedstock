@@ -12,35 +12,15 @@
         --qmake="%LIBRARY_BIN%\qmake.exe" ^
         --bindir="%LIBRARY_BIN%" ^
         --spec=win32-msvc ^
-        --enable QtWidgets ^
-        --enable QtGui ^
-        --enable QtCore ^
-        --enable QtHelp ^
-        --enable QtMultimediaWidgets ^
-        --enable QtNetwork ^
-        --enable QtXml ^
-        --enable QtXmlPatterns ^
-        --enable QtDBus ^
-        --enable QtWebSockets ^
-        --enable QtWebChannel ^
-        --enable QtWebEngineWidgets ^
         --disable QtNfc ^
-        --enable QtWebEngineCore ^
-        --enable QtWebEngine ^
-        --enable QtOpenGL ^
-        --enable QtQml ^
-        --enable QtQuick ^
-        --enable QtQuickWidgets ^
-        --enable QtSql ^
-        --enable QtSvg ^
-        --enable QtDesigner ^
-        --enable QtPrintSupport ^
-        --enable QtSensors ^
-        --enable QtTest ^
-        --enable QtBluetooth ^
-        --enable QtLocation ^
-        --enable QtPositioning ^
-        --enable QtSerialPort
+        --enable QtWebKit ^
+        --enable QtWebKitWidgets ^
+        --no-designer-plugin ^
+        --no-python-dbus ^
+        --no-qml-plugin ^
+        --no-qsci-api ^
+        --no-sip-files ^
+        --no-tools
 
 if errorlevel 1 exit 1
 
