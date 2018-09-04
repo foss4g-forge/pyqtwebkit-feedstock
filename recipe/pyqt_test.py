@@ -13,7 +13,7 @@ def main():
 
     web = QWebView()
     settings = web.settings()
-    settings.setAttribute(QWebSettings.JavaEnabled, True)
+    settings.setAttribute(QWebSettings.JavascriptEnabled, True)
     web.load(QUrl("https://www.google.com"))
     web.show()
     web.setWindowTitle("Google Images Redirect")
