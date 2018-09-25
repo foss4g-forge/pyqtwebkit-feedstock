@@ -4,7 +4,7 @@ set -e # Abort on error.
 
 declare -a _extra_modules
 # Avoid Xcode
-if [[ ${HOST} =~ .*darwin.* ]]; then
+if [[ $(uname) == Darwin ]]; then
   PATH=${PREFIX}/bin/xc-avoidance:${PATH}
     _extra_modules+=(--enable)
     _extra_modules+=(QtMacExtras)
